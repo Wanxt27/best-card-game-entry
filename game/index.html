@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberfall Duel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="embers" aria-hidden="true"></canvas>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">EMBERFALL <span>DUEL</span></div>
+    <div class="topinfo">
+      <span id="turnLabel">Turn 1</span>
+      <span id="phaseLabel">Your turn</span>
+      <button id="muteBtn" type="button" title="Mute (M)">Sound: On</button>
+      <button id="restartBtn" type="button" title="Restart (R)">Restart</button>
+    </div>
+  </header>
+
+  <main id="table">
+    <section id="rivalPanel" class="sidePanel rival">
+      <div class="portrait">WARDEN<br>OF CINDERS</div>
+      <div class="vitals">
+        <div class="lifeRow"><span class="lifeNum" id="aiLife">30</span><span class="lifeMax">/ 30</span></div>
+        <div class="bar"><div class="barFill life" id="aiLifeBar"></div></div>
+        <div class="subRow"><span id="aiShield">Shield 0</span><span id="aiEnergy">Energy 0/0</span><span id="aiDeck">Deck 24</span></div>
+      </div>
+      <div class="handRow" id="aiHand"></div>
+    </section>
+
+    <section id="midRow">
+      <div id="logBox"><h2>Battle Log</h2><ul id="log"></ul></div>
+      <div id="centerBox">
+        <div id="hint">Click a card to play it, or press 1&ndash;5. Space ends your turn.</div>
+        <button id="endTurnBtn" type="button">End Turn (Space)</button>
+      </div>
+    </section>
+
+    <section id="playerPanel" class="sidePanel player">
+      <div class="portrait">YOU<br>EMBERBORN</div>
+      <div class="vitals">
+        <div class="lifeRow"><span class="lifeNum" id="plLife">30</span><span class="lifeMax">/ 30</span></div>
+        <div class="bar"><div class="barFill life" id="plLifeBar"></div></div>
+        <div class="subRow"><span id="plShield">Shield 0</span><span id="plEnergy">Energy 1/1</span><span id="plDeck">Deck 19</span></div>
+      </div>
+      <div class="handRow" id="plHand"></div>
+    </section>
+  </main>
+
+  <div id="overlay" class="hidden">
+    <div id="overlayCard">
+      <h1 id="overlayTitle">Emberfall Duel</h1>
+      <p id="overlayText"></p>
+      <div id="overlayStats"></div>
+      <button id="overlayBtn" type="button">Play</button>
+    </div>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
